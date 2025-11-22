@@ -17,7 +17,7 @@ const AuthForm = (props) => {
 
   return (
     <form
-      className="p-4 m-4 bg-white border rounded-lg border-slate-200"
+      className="p-4 m-4 bg-white border rounded-lg border-slate-200 w-full"
       onSubmit={(e) => handleSubmit(e)}
     >
       {fields.map((field) => (
