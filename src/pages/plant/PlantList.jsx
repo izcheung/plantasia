@@ -3,6 +3,7 @@ import Navbar from "shared/Navbar";
 import RedirectToSignInIfSignedOut from "shared/RedirectToSignInIfSignedOut";
 import * as PlantService from "services/plants";
 import PlantItem from "./PlantItem";
+import LoadingSpinner from "shared/LoadingSpinner";
 
 const PlantList = () => {
   const [plants, setPlants] = useState([]);
@@ -28,7 +29,7 @@ const PlantList = () => {
       <div className="h-screen bg-green-50">
         {loading ? (
           <div className="flex justify-center pt-40 items-center">
-            <i className="fa-solid fa-spinner animate-spin text-xl text-emerald-600"></i>
+            <LoadingSpinner></LoadingSpinner>{" "}
           </div>
         ) : (
           <div className="flex justify-center py-24 ">

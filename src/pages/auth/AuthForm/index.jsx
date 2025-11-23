@@ -1,5 +1,7 @@
+import LoadingSpinner from "shared/LoadingSpinner";
 import Field from "./Field";
 import { useState } from "react";
+
 const AuthForm = (props) => {
   const { fields, submitButtonText, onSubmit } = props;
   const [fieldValues, setFieldValues] = useState(() => {
@@ -39,7 +41,7 @@ const AuthForm = (props) => {
         {submitButtonText}
         {loading && (
           <div className="absolute top-0 right-3 flex items-center h-full">
-            <i className="fa-solid fa-spinner text-green-300 text-2xl animate-spin"></i>
+            <LoadingSpinner></LoadingSpinner>
           </div>
         )}
       </button>
