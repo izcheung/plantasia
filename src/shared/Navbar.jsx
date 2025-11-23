@@ -1,10 +1,16 @@
 import SessionContext from "context/session";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 const Navbar = () => {
-  const { username } = useContext(SessionContext);
+  const { username, signOut } = useContext(SessionContext);
+  const [signOutMenu, setSignOutMenu] = useState(false);
   return (
-    <nav className="bg-emerald-800 flex justify-center">
+    <nav
+      className="bg-emerald-800 flex justify-center"
+      onMouseLeave={() => {
+        setSignOutMenu(false);
+      }}
+    >
       <div className="w-full max-w-5xl flex items-center justify-between px-8 py-2">
         <div className=" text-white flex flex-col font-playfair items-center text-2xl">
           <img
@@ -13,11 +19,29 @@ const Navbar = () => {
           />
           <div className=" border-white border">Plantasia</div>
         </div>
-        <div>
-          <button className="text-emerald-200 flex items-center">
-            <i className="fa-regular fa-user mr-2 text-xl"></i>
-            {username}
-          </button>
+        <div className="flex-1 justify-end flex">
+          <div className="relative min-w-32">
+            {" "}
+            <button
+              className="text-emerald-200 flex items-center"
+              onClick={() => {
+                setSignOutMenu(true);
+              }}
+            >
+              <i className="fa-regular fa-user mr-2 text-xl"></i>
+              {username}
+            </button>
+            {signOutMenu && (
+              <div className="absolute bottom-[-46px] bg-white shadow-md rounded-md">
+                <button
+                  className="hover:text-emerald-800 text-slate-500 px-4 py-2"
+                  onClick={signOut}
+                >
+                  <i className="fa-solid fa-right-from-bracket mr-2"></i>signout{" "}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </nav>
