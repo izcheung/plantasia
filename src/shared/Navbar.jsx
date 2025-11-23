@@ -11,13 +11,13 @@ const Navbar = () => {
         setSignOutMenu(false);
       }}
     >
-      <div className="w-full max-w-5xl flex items-center justify-between px-8 py-2">
-        <div className=" text-white flex flex-col font-playfair items-center text-2xl">
+      <div className="w-full max-w-5xl flex items-center justify-between px-8 py-2 ">
+        <div className=" text-white flex flex-col font-playfair items-center text-2xl ">
           <img
             className="w-10"
             src="https://static-task-assets.react-formula.com/capstone_logo_light.png"
           />
-          <div className=" border-white border">Plantasia</div>
+          <div className="">Plantasia</div>
         </div>
         <div className="flex-1 justify-end flex">
           <div className="relative min-w-32">
