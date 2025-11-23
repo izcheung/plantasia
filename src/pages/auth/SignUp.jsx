@@ -1,19 +1,19 @@
 import { useState } from "react";
 import AuthForm from "./AuthForm";
 import FormContainer from "./AuthForm/FormContainer";
-import { Link } from "react-router-dom";
-import * as userService from "../../services/user";
+import { Link, useNavigate } from "react-router-dom";
+import * as userService from "services/user";
 
 const SignUp = () => {
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   return (
     <FormContainer>
       {error && (
-        <div className="text-red-600 border-3 bg-red-200 rounded-lg px-2 py-1 mt-4 text-sm shadow-md">
+        <div className="text-red-600 border-3 bg-red-100 rounded-lg px-2 py-1 mt-4 text-sm shadow-md">
           {error}
         </div>
       )}
-
       <AuthForm
         fields={[
           {
@@ -50,7 +50,9 @@ const SignUp = () => {
           });
 
           if (response.status) {
-            ("User successfully created.");
+            navigate("/", {
+              state: { accountCreated: true },
+            });
             setError("");
           }
           const data = await response.json();
@@ -58,7 +60,7 @@ const SignUp = () => {
         }}
       />
 
-      <Link to="/signin" className="text-green-600 underline text-sm ">
+      <Link to="/" className="text-green-600 underline text-sm ">
         Sign in
       </Link>
     </FormContainer>
