@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const POT_COLORS = {
   stone: "bg-stone-200",
   slate: "bg-slate-300",
@@ -35,10 +36,12 @@ const PlantItem = (props) => {
   });
   return (
     <div className="w-[280px] mx-5 my-8 ">
-      <img
-        src={plant.images[imageIndex].src}
-        className="w-[280px] h-[320px] rounded-md"
-      />
+      <Link to={`/plants/${plant.id}`}>
+        <img
+          src={plant.images[imageIndex].src}
+          className="w-[280px] h-[320px] rounded-md"
+        />
+      </Link>
       <div className="flex justify-between my-3">
         <div className="text-xl font-playfair text-emerald-700">
           {plant.name}

@@ -6,6 +6,7 @@ import * as userService from "services/user";
 import SessionContext from "context/session";
 import { jwtDecode } from "jwt-decode";
 import PlantList from "pages/plant/PlantList";
+import PlantDetails from "pages/plant/PlantDetails";
 const App = () => {
   const [sessionToken, setSessionToken] = useState(() =>
     userService.getSessionToken()
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/plants" element={<PlantList />}></Route>
+          <Route path="/plants/:plantId" element={<PlantDetails />}></Route>
         </Routes>
       </BrowserRouter>
     </SessionContext.Provider>
