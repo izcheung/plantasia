@@ -1,4 +1,5 @@
 import PlantHeader from "./PlantHeader";
+import BenefitBox from "./BenefitBox";
 const PlantInfoSection = (props) => {
   const { plant } = props;
   return (
@@ -8,7 +9,19 @@ const PlantInfoSection = (props) => {
           <PlantHeader plant={plant} />
         </div>
         <img src={plant.images[0].src} className=" rounded-md" />
-        <div>todo</div>
+        <div className="flex">
+          <BenefitBox
+            icon="far fa-check-circle"
+            title="Guaranteed Healthy"
+            description="Guaranteed to arrive healthy or your money back"
+          />
+          <div className="bg-slate-300 w-px mt-4"></div>
+          <BenefitBox
+            icon="fa-solid fa-truck-fast"
+            title="Free shipping"
+            description="Get free ground shipping for orders over $100"
+          />
+        </div>
       </div>
       <div className="flex flex-col flex-1 md:px-8">
         <div className="hidden md:block">

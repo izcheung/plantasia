@@ -21,7 +21,7 @@ const PlantDetails = () => {
       setLoading(false);
     };
     fetchPlantDetails();
-  }, []);
+  }, [plantId]);
   return (
     <RedirectToSignInIfSignedOut>
       <Navbar />
