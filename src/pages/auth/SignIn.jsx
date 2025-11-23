@@ -9,7 +9,7 @@ const SignIn = () => {
   const location = useLocation();
   const [error, setError] = useState("");
   const sessionContext = useContext(SessionContext);
-  console.log(location.state);
+
   return (
     <RedirectToPlantsIfSignedIn>
       <FormContainer>
@@ -44,7 +44,6 @@ const SignIn = () => {
             if (response.status === 201) {
               setError("");
               sessionContext.signIn(data.capstone_session_token);
-              console.log("Sign in successful");
             } else {
               setError(data.error);
             }

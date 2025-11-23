@@ -18,7 +18,6 @@ const apiFetch = (method, path, body = null) => {
   if (body) {
     options.body = JSON.stringify(body);
   }
-  console.log(options);
 
   return fetch(VITE_API_BASE_URL + path, options);
 };

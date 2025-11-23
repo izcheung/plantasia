@@ -15,7 +15,6 @@ const PlantList = () => {
       const data = await response.json();
       setPlants(data);
       setLoading(false);
-      console.log(data);
     };
     fetchPlants();
   }, []);

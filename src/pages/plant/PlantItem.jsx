@@ -18,7 +18,7 @@ const PlantItem = (props) => {
   const [imageIndex, setImageIndex] = useState(() => {
     return getRandomIndex(plant.images);
   });
-  console.log(imageIndex, plant.images.length);
+
   const potColorList = plant.images.map((image, index) => {
     const color = POT_COLORS[image.pot_color];
     return (
