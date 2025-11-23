@@ -1,6 +1,6 @@
 import SessionContext from "context/session";
 import { useContext, useState } from "react";
-
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const { username, signOut } = useContext(SessionContext);
   const [signOutMenu, setSignOutMenu] = useState(false);
@@ -12,13 +12,16 @@ const Navbar = () => {
       }}
     >
       <div className="w-full max-w-5xl flex items-center justify-between px-8 py-2 ">
-        <div className=" text-white flex flex-col font-playfair items-center text-2xl ">
+        <Link
+          to="/plants"
+          className=" text-white flex flex-col font-playfair items-center text-2xl "
+        >
           <img
             className="w-10"
             src="https://static-task-assets.react-formula.com/capstone_logo_light.png"
           />
           <div className="">Plantasia</div>
-        </div>
+        </Link>
         <div className="flex-1 justify-end flex">
           <div className="relative min-w-32">
             {" "}
