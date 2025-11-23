@@ -28,13 +28,13 @@ const PlantList = () => {
       <Navbar />
       <div className="h-screen bg-green-50">
         {loading ? (
-          <div className="flex justify-center mt-40 items-center">
+          <div className="flex justify-center pt-40 items-center">
             <i className="fa-solid fa-spinner animate-spin text-xl text-emerald-600"></i>
           </div>
         ) : (
           <div className="flex justify-center py-24 ">
-            <div className="w-full max-w-5xl  border-black border">
-              <div className="font-playfair text-4xl text-emerald-800 mb-6">
+            <div className="w-full max-w-5xl">
+              <div className="font-playfair text-4xl text-emerald-800 mb-6 px-4">
                 Plants in stock
               </div>
               <div className="flex flex-wrap justify-center">{plantList}</div>
