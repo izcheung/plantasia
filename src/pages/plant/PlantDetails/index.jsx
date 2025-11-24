@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import * as PlantService from "services/plants";
 import RedirectToSignInIfSignedOut from "shared/RedirectToSignInIfSignedOut";
-import Navbar from "shared/Navbar";
+import Navbar from "shared/Navbar/Navbar";
 import LoadingSpinner from "shared/LoadingSpinner";
 import PlantInfoSection from "./PlantInfoSection";
 
@@ -27,9 +27,7 @@ const PlantDetails = () => {
       <Navbar />
       <div className="min-h-screen bg-green-50 pt-16 px-8">
         {loading ? (
-          <div className="flex justify-center pt-40 items-center">
-            <LoadingSpinner></LoadingSpinner>
-          </div>
+          <LoadingSpinner></LoadingSpinner>
         ) : (
           plant && (
             <div className="flex justify-center">

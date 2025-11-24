@@ -37,13 +37,13 @@ const AuthForm = (props) => {
         />
       ))}
 
-      <button className=" relative bg-emerald-700 text-white w-full rounded-lg py-2 mt-4">
-        {submitButtonText}
+      <button className="relative bg-emerald-700 text-white w-full rounded-lg py-2 mt-4">
         {loading && (
           <div className="absolute top-0 right-3 flex items-center h-full">
-            <LoadingSpinner></LoadingSpinner>
+            <i className="fa-solid fa-spinner animate-spin"></i>
           </div>
         )}
+        {submitButtonText}
       </button>
     </form>
   );

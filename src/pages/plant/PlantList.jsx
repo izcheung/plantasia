@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "shared/Navbar";
+import Navbar from "shared/Navbar/Navbar";
 import RedirectToSignInIfSignedOut from "shared/RedirectToSignInIfSignedOut";
 import * as PlantService from "services/plants";
 import PlantItem from "./PlantItem";
@@ -28,9 +28,7 @@ const PlantList = () => {
       <Navbar />
       <div className="h-screen bg-green-50">
         {loading ? (
-          <div className="flex justify-center pt-40 items-center">
-            <LoadingSpinner></LoadingSpinner>{" "}
-          </div>
+          <LoadingSpinner></LoadingSpinner>
         ) : (
           <div className="flex justify-center py-24 ">
             <div className="w-full max-w-5xl">
