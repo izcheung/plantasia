@@ -1,18 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-const POT_COLORS = {
-  stone: "bg-stone-200",
-  slate: "bg-slate-300",
-  sky: "bg-sky-700",
-  black: "bg-gray-600",
-  white: "bg-gray-50",
-  amber: "bg-amber-600",
-};
-
-const getRandomIndex = (array) => {
-  return Math.floor(Math.random() * array.length);
-};
+import { getRandomIndex, POT_COLORS } from "shared/utils";
 
 const PlantItem = (props) => {
   const { plant } = props;
