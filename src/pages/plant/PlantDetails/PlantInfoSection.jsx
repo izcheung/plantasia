@@ -1,14 +1,21 @@
 import PlantHeader from "./PlantHeader";
 import BenefitBox from "./BenefitBox";
+import PlantOptions from "./PlantOptions";
+import { useState } from "react";
+import { getRandomIndex } from "shared/utils";
+
 const PlantInfoSection = (props) => {
   const { plant } = props;
+  const [imageIndex, setImageIndex] = useState(() =>
+    getRandomIndex(plant.images)
+  );
   return (
     <div className="flex flex-col md:flex-row">
       <div className="flex flex-col flex-1">
         <div className="md:hidden">
           <PlantHeader plant={plant} />
         </div>
-        <img src={plant.images[0].src} className=" rounded-md" />
+        <img src={plant.images[imageIndex].src} className=" rounded-md" />
         <div className="flex">
           <BenefitBox
             icon="far fa-check-circle"
@@ -30,6 +37,11 @@ const PlantInfoSection = (props) => {
         <div className="text-slate-600 leading-relaxed mt-4 pl-px">
           {plant.description}
         </div>
+        <PlantOptions
+          plant={plant}
+          imageIndex={imageIndex}
+          setImageIndex={setImageIndex}
+        />
         {/* <div className="">{plant.care_instructions}</div> */}
       </div>
     </div>
