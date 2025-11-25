@@ -10,9 +10,8 @@ const PlantOptions = (props) => {
 
   const potColors = plant.images.map((image, index) => {
     return (
-      <div className="mx-2 flex items-center flex-col">
+      <div className="mx-2 flex items-center flex-col" key={index}>
         <div
-          key={index}
           className={clsx(
             "w-10 h-10 rounded-full",
             POT_COLORS[image.pot_color],
