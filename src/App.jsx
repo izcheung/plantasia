@@ -6,7 +6,7 @@ import * as userService from "services/user";
 import SessionContext from "context/session";
 import { jwtDecode } from "jwt-decode";
 import PlantList from "pages/plant/PlantList";
-import PlantDetails from "pages/plant/PlantDetails";
+import PlantDetails from "pages/plant/plantDetails";
 const App = () => {
   const [sessionToken, setSessionToken] = useState(() =>
     userService.getSessionToken()
