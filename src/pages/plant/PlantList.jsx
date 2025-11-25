@@ -26,7 +26,7 @@ const PlantList = () => {
   return (
     <RedirectToSignInIfSignedOut>
       <Navbar />
-      <div className="h-screen bg-green-50">
+      <div className="min-h-screen bg-green-50">
         {loading ? (
           <LoadingSpinner></LoadingSpinner>
         ) : (
