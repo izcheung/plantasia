@@ -4,6 +4,7 @@ import { useContext, useState, useEffect, useCallback } from "react";
 import * as CartService from "services/cart";
 import LoadingSpinner from "shared/LoadingSpinner";
 import CartItem from "./CartItem";
+import { motion } from "framer-motion";
 
 import clsx from "clsx";
 const CartModal = (props) => {
@@ -45,7 +46,12 @@ const CartModal = (props) => {
     );
   });
   return (
-    <div className="flex flex-col w-full h-screen max-w-xl bg-white">
+    <motion.div
+      className="flex flex-col w-full h-screen max-w-xl bg-white"
+      initial={{ translateX: "100%" }}
+      animate={{ translateX: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="text-3xl text-center text-white shadow-md py-7 bg-emerald-800 font-playfair">
         {username}&apos;s cart
       </div>
@@ -81,7 +87,7 @@ const CartModal = (props) => {
           </>
         )}{" "}
       </div>
-    </div>
+    </motion.div>
   );
 };
 export default CartModal;

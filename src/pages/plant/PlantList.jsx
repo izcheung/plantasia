@@ -4,6 +4,7 @@ import RedirectToSignInIfSignedOut from "shared/RedirectToSignInIfSignedOut";
 import * as PlantService from "services/plants";
 import PlantItem from "./PlantItem";
 import LoadingSpinner from "shared/LoadingSpinner";
+import { motion } from "framer-motion";
 
 const PlantList = () => {
   const [plants, setPlants] = useState([]);
@@ -20,8 +21,18 @@ const PlantList = () => {
     fetchPlants();
   }, []);
 
-  const plantList = plants.map((plant) => {
-    return <PlantItem plant={plant} key={plant.id} />;
+  const plantList = plants.map((plant, index) => {
+    return (
+      <motion.div
+        key={plant.id}
+        initial={{ opacity: 0, translateY: "20px" }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 + (index % 3) * 0.2, duration: 0.4 }}
+      >
+        <PlantItem plant={plant} />
+      </motion.div>
+    );
   });
   return (
     <RedirectToSignInIfSignedOut>
