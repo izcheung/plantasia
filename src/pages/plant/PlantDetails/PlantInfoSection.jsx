@@ -3,6 +3,8 @@ import BenefitBox from "./BenefitBox";
 import PlantOptions from "./PlantOptions";
 import { useState } from "react";
 import { getRandomIndex } from "shared/utils";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 const PlantInfoSection = (props) => {
   const { plant } = props;
@@ -15,7 +17,9 @@ const PlantInfoSection = (props) => {
         <div className="md:hidden">
           <PlantHeader plant={plant} />
         </div>
-        <img src={plant.images[imageIndex].src} className=" rounded-md" />
+        <Zoom>
+          <img src={plant.images[imageIndex].src} className=" rounded-md" />
+        </Zoom>
         <div className="flex">
           <BenefitBox
             icon="far fa-check-circle"
