@@ -2,11 +2,13 @@ import SessionContext from "context/session";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import CartModal from "./modals/CartModal/CartModal";
-
+import ModalWrapper from "./modals/ModalWrapper";
+import MobileMenu from "./modals/MobileMenu";
 const Navbar = () => {
   const { username, signOut } = useContext(SessionContext);
   const [signOutMenu, setSignOutMenu] = useState(false);
   const [cartModal, setCartModal] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
   return (
     <>
       <nav
@@ -26,7 +28,7 @@ const Navbar = () => {
             />
             <div className="">Plantasia</div>
           </Link>
-          <div className="flex-1 justify-end flex">
+          <div className="hidden md:flex flex-1 justify-end">
             <div className="relative min-w-32">
               {" "}
               <button
@@ -60,9 +62,24 @@ const Navbar = () => {
               Cart
             </button>
           </div>
+          <button className="md:hidden" onClick={() => setMobileMenu(true)}>
+            <i className="fa-solid fa-bars text-4xl text-emerald-400"></i>
+          </button>
         </div>
       </nav>
-      {cartModal && <CartModal setCartModal={setCartModal} />}
+
+      <ModalWrapper isOpen={cartModal} onClose={() => setCartModal(false)}>
+        <CartModal setCartModal={setCartModal} />
+      </ModalWrapper>
+      <ModalWrapper isOpen={mobileMenu} onClose={() => setMobileMenu(false)}>
+        <MobileMenu
+          onCartOpen={() => {
+            setCartModal(true);
+            setMobileMenu(false);
+          }}
+          onMobileClose={() => setMobileMenu(false)}
+        />
+      </ModalWrapper>
     </>
   );
 };
