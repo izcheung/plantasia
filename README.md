@@ -27,7 +27,7 @@ Plantasia is a visually appealing, responsive React web application for a fictit
 
 ## Motivation
 
-Plantasia was developed as a capstone project to demonstrate proficiency in modern React development, state management, and API integration. The project showcases skills in building responsive user interfaces, implementing authentication flows, and creating an engaging e-commerce experience with smooth animations and intuitive navigation.
+Plantasia was developed to demonstrate proficiency in modern React development, state management, and API integration. The project showcases skills in building responsive user interfaces, implementing authentication flows, and creating an engaging e-commerce experience with smooth animations and intuitive navigation.
 
 ## Requirements
 
