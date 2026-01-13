@@ -23,11 +23,11 @@
 
 ## Summary
 
-Plantasia is a visually appealing, responsive React web application for a fictitious plant store. Built with modern frontend technologies, it features user authentication, plant browsing, detailed plant information, and a shopping cart system. The app provides a smooth, animated user experience with Tailwind CSS styling and is fully responsive for both desktop and mobile devices.
+Plantasia is a visually appealing, responsive React web application for a fictitious plant store. It features user authentication, plant browsing, detailed plant information, and a shopping cart system. The app provides a smooth, animated user experience with Tailwind CSS styling and is fully responsive for both desktop and mobile devices.
 
 ## Motivation
 
-Plantasia was developed as a capstone project to demonstrate proficiency in modern React development, state management, and API integration. The project showcases skills in building responsive user interfaces, implementing authentication flows, and creating an engaging e-commerce experience with smooth animations and intuitive navigation.
+Plantasia was developed to demonstrate proficiency in modern React development, state management, and API integration. The project showcases skills in building responsive user interfaces, implementing authentication flows, and creating an engaging e-commerce experience with smooth animations and intuitive navigation.
 
 ## Requirements
 
